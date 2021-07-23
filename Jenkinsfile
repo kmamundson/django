@@ -3,8 +3,8 @@ pipeline {
   stages {
     stage('Run Unit Tests') {
       steps {
-        sh 'cd tests'
-        sh 'tox'
+        bat 'cd tests'
+        bat 'tox'
         emailext(subject: 'Unit Tests Results', body: 'Results attached', attachLog: true, from: 'donotreply@ftwilliam.com', to: 'keith.amundson@wolterskluwer.com')
       }
     }
