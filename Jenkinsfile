@@ -10,8 +10,8 @@ pipeline {
     stage('Unit Tests') {
       steps {
         sh '''
-cd tests python -m pip install -e .. python -m pip install -r requirements/py3.txt
-./runtests.py'''
+cd tests python3 -m pip install -e .. python3 -m pip install -r requirements/py3.txt
+python3 ./runtests.py'''
       }
     }
 
