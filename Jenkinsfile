@@ -1,10 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('Run Unit Tests') {
+    stage('') {
       steps {
-        sh './runtests.py'
-        emailext(subject: 'Unit Tests Results', body: 'Results attached', attachLog: true, from: 'donotreply@ftwilliam.com', to: 'keith.amundson@wolterskluwer.com')
+        fileExists './tests/runtests.py'
       }
     }
 
